@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from 'axios'
 
 export default {
   name: 'Deployments',
@@ -42,9 +42,9 @@ export default {
 
     axios.post(endpoint, data).then(response => {
       this.items = response.data.list
-    }), error => {
+    }).catch(error => {
       console.log(error)
-    }
+    })
   }
 }
 </script>
