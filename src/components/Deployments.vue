@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Deployments',
   data () {
@@ -36,13 +38,13 @@ export default {
       request: {}
     }
 
-    const endpoint = 'http://localhost:8080/rpc'
+    const endpoint = 'http://' + process.env.HOST + ':8080/rpc'
 
-    this.$http.post(endpoint, data).then(response => {
+    axios.post(endpoint, data).then(response => {
       this.items = response.data.list
-    }, response => {
-      console.log(response)
-    })
+    }), error => {
+      console.log(error)
+    }
   }
 }
 </script>
