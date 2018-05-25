@@ -36,7 +36,7 @@ export default {
       request: {}
     }
 
-    const endpoint = 'http://192.168.1.108:8080/rpc'
+    const endpoint = 'http://localhost:8080/rpc'
 
     this.$http.post(endpoint, data).then(response => {
       this.items = response.data.list
